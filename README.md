@@ -138,11 +138,11 @@ All runnable examples live in the [`examples/`](examples/) folder. Each file is 
 
 | File | Description |
 |------|-------------|
-| [`examples/01_run_at_rpm.py`](examples/01_run_at_rpm.py) | Spin motor to a target electrical RPM and monitor live telemetry for 5 seconds |
-| [`examples/02_run_at_duty_cycle.py`](examples/02_run_at_duty_cycle.py) | Ramp motor from 0% to 50% duty cycle in steps, printing actual duty and RPM at each step |
-| [`examples/03_basic_configuration.py`](examples/03_basic_configuration.py) | Read live VESC status (voltage, fault code) and print current Speed PID gains from MCCONF |
-| [`examples/04_read_telemetry.py`](examples/04_read_telemetry.py) | Continuous monitoring loop with a formatted table of all telemetry fields, fault name resolution, and temperature warnings |
-| [`examples/05_advanced_pid_tuning.py`](examples/05_advanced_pid_tuning.py) | Read current PID gains, write new Kp/Ki/Kd values, and verify them — with optional raw packet debug output |
+| [`examples/1_run_at_rpm.py`](examples/1_run_at_rpm.py) | Spin motor to a target electrical RPM and monitor live telemetry for 5 seconds |
+| [`examples/2_run_at_duty_cycle.py`](examples/2_run_at_duty_cycle.py) | Ramp motor from 0% to 50% duty cycle in steps, printing actual duty and RPM at each step |
+| [`examples/3_basic_configuration.py`](examples/3_basic_config.py) | Read live VESC status (voltage, fault code) and print current Speed PID gains from MCCONF |
+| [`examples/4_read_telemetry.py`](examples/4_read_telemetry.py) | Continuous monitoring loop with a formatted table of all telemetry fields, fault name resolution, and temperature warnings |
+| [`examples/5_advanced_pid_tuning.py`](examples/5_advanced_pid_tuning.py) | Read current PID gains, write new Kp/Ki/Kd values, and verify them — with optional raw packet debug output |
 
 Run any example directly:
 
