@@ -12,11 +12,6 @@ A Python library for communicating with **VESC** (Vedder Electronic Speed Contro
 - [Quick Start](#quick-start)
 - [API Reference](#api-reference)
 - [Examples](#examples)
-  - [Example 1 – Running the Motor at RPM](#example-1--running-the-motor-at-rpm)
-  - [Example 2 – Running the Motor at Duty Cycle](#example-2--running-the-motor-at-duty-cycle)
-  - [Example 3 – Basic Configuration](#example-3--basic-configuration)
-  - [Example 4 – Reading and Analyzing Telemetry Values](#example-4--reading-and-analyzing-telemetry-values)
-  - [Example 5 – Advanced Configuration (PID Tuning)](#example-5--advanced-configuration-pid-tuning)
 - [Telemetry Data Fields](#telemetry-data-fields)
 - [Fault Codes](#fault-codes)
 - [Troubleshooting](#troubleshooting)
@@ -80,6 +75,7 @@ vesc.close()
 ## API Reference
 
 ### `VescUart(serial_port, baudrate=115200, timeout=0.1)`
+
 Opens the serial connection to the VESC.
 
 | Parameter     | Type    | Default    | Description                              |
@@ -140,7 +136,7 @@ All runnable examples live in the [`examples/`](examples/) folder. Each file is 
 |------|-------------|
 | [`examples/1_run_at_rpm.py`](examples/1_run_at_rpm.py) | Spin motor to a target electrical RPM and monitor live telemetry for 5 seconds |
 | [`examples/2_run_at_duty_cycle.py`](examples/2_run_at_duty_cycle.py) | Ramp motor from 0% to 50% duty cycle in steps, printing actual duty and RPM at each step |
-| [`examples/3_basic_configuration.py`](examples/3_basic_config.py) | Read live VESC status (voltage, fault code) and print current Speed PID gains from MCCONF |
+| [`examples/3_basic_config.py`](examples/3_basic_config.py) | Read live VESC status (voltage, fault code) and print current Speed PID gains from MCCONF |
 | [`examples/4_read_telemetry.py`](examples/4_read_telemetry.py) | Continuous monitoring loop with a formatted table of all telemetry fields, fault name resolution, and temperature warnings |
 | [`examples/5_advanced_pid_tuning.py`](examples/5_advanced_pid_tuning.py) | Read current PID gains, write new Kp/Ki/Kd values, and verify them — with optional raw packet debug output |
 
@@ -148,7 +144,7 @@ Run any example directly:
 
 ```bash
 cd examples
-python 01_run_at_rpm.py
+python 1_run_at_rpm.py
 ```
 
 > Before running, open each file and update the `SERIAL_PORT` variable to match your system (e.g. `/dev/ttyUSB0` on Linux/macOS or `COM3` on Windows).
@@ -203,4 +199,3 @@ After a successful `get_values()` call, all fields below are available on `vesc.
 | Motor does not spin after `set_rpm()` | No keepalive / current limit | Check max current in VESC Tool; send commands in a loop to keep VESC alive |
 | Fault code `4` on high duty ramp | Overcurrent | Ramp duty cycle gradually; reduce motor current limit |
 | PID write succeeds but gains do not change | Payload offset mismatch | Enable `set_debug(True)` and check payload length vs. expected 458 bytes |
-
